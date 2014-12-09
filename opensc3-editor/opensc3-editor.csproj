@@ -37,17 +37,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainWindow.cs">
+    <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainWindow.Designer.cs">
-      <DependentUpon>MainWindow.cs</DependentUpon>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="PackageEditor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PackageEditor.Designer.cs">
       <DependentUpon>PackageEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PackageEditorEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PackageEditorEntry.Designer.cs">
+      <DependentUpon>PackageEditorEntry.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -60,11 +66,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MainWindow.resx">
-      <DependentUpon>MainWindow.cs</DependentUpon>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PackageEditor.resx">
       <DependentUpon>PackageEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PackageEditorEntry.resx">
+      <DependentUpon>PackageEditorEntry.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
 </Project>

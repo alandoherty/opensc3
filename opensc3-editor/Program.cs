@@ -13,7 +13,7 @@ namespace opensc3editor
 		public static void Main (string[] args)
 		{
 			Application.EnableVisualStyles ();
-			Application.Run (new MainWindow ());
+			Application.Run (new Main ());
 		}
 
 		/// <summary>

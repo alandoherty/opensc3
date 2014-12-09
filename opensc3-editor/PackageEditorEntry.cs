@@ -49,7 +49,7 @@ namespace opensc3editor {
 
         private void buttonYes_Click(object sender, EventArgs e) {
             // check not empty
-            if (textName.Text != "") {
+            if (textName.Text == "") {
                 MessageBox.Show("The name entered is invalid");
                 return;
             }

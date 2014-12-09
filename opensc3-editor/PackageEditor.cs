@@ -16,7 +16,6 @@ namespace opensc3editor {
         private string _pakPath = "";
 
 		private string _current;
-        private bool _opened = false;
 		#endregion
 
 		#region Methods
@@ -31,6 +30,51 @@ namespace opensc3editor {
             // update ui
             UpdateUI();
 		}
+
+        /// <summary>
+        /// Adds a file.
+        /// </summary>
+        public void Add() {
+            // new entry
+            PackageEditorEntry entry = new PackageEditorEntry();
+
+            if (entry.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
+                // check if already exists
+                if (_pak.Exists(entry.Name)) {
+                    MessageBox.Show("An entry already exists with the same name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // add to pak
+                _pak.Add(entry.Name);
+
+                // add to tree
+                tree.Nodes.Add(new TreeNode() {
+                    Text = entry.Name,
+                    Tag = entry.Name
+                });
+            }
+        }
+
+        /// <summary>
+        /// Deletes a file.
+        /// </summary>
+        public void Delete() {
+            if (tree.SelectedNode != null) {
+                // get entry
+                string entry = (string)tree.SelectedNode.Tag;
+
+                // remove from pak
+                _pak.Remove(entry);
+
+                // remove from tree
+                tree.Nodes.Remove(tree.SelectedNode);
+
+                // select next available file
+                if (_pak.Entries.Count > 0)
+                    Select(_pak.Entries.First().Key);
+            }
+        }
 
         /// <summary>
         /// Updates the UI.
@@ -76,6 +120,22 @@ namespace opensc3editor {
         private void tree_NodeMouseClick(object sender, System.Windows.Forms.TreeNodeMouseClickEventArgs e) {
             Select((string)e.Node.Tag);
         }
-		#endregion
+
+        private void button1_Click(object sender, EventArgs e) {
+            Add();
+        }
+
+        private void data_TextChanged(object sender, EventArgs e) {
+            // lines
+            string[] lines = data.Text.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
+
+            // set as values
+            _pak.Entries[_current].Values = new List<string>(lines);
+        }
+
+        private void buttonDel_Click(object sender, EventArgs e) {
+            Delete();
+        }
+        #endregion
     }
 }

@@ -24,13 +24,13 @@
         /// </summary>
         private void InitializeComponent() {
             this.mainSplit = new System.Windows.Forms.SplitContainer();
-            this.tree = new System.Windows.Forms.TreeView();
-            this.data = new System.Windows.Forms.RichTextBox();
             this.treeSplit = new System.Windows.Forms.SplitContainer();
-            this.buttonIn = new System.Windows.Forms.Button();
-            this.buttonRename = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.tree = new System.Windows.Forms.TreeView();
             this.buttonDel = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.buttonRename = new System.Windows.Forms.Button();
+            this.buttonIn = new System.Windows.Forms.Button();
+            this.data = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.mainSplit)).BeginInit();
             this.mainSplit.Panel1.SuspendLayout();
             this.mainSplit.Panel2.SuspendLayout();
@@ -58,24 +58,6 @@
             this.mainSplit.SplitterDistance = 161;
             this.mainSplit.TabIndex = 0;
             // 
-            // tree
-            // 
-            this.tree.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tree.Location = new System.Drawing.Point(0, 0);
-            this.tree.Name = "tree";
-            this.tree.Size = new System.Drawing.Size(161, 426);
-            this.tree.TabIndex = 0;
-            this.tree.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tree_NodeMouseClick);
-            // 
-            // data
-            // 
-            this.data.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.data.Location = new System.Drawing.Point(0, 0);
-            this.data.Name = "data";
-            this.data.Size = new System.Drawing.Size(319, 461);
-            this.data.TabIndex = 0;
-            this.data.Text = "";
-            // 
             // treeSplit
             // 
             this.treeSplit.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -97,14 +79,34 @@
             this.treeSplit.SplitterDistance = 426;
             this.treeSplit.TabIndex = 1;
             // 
-            // buttonIn
+            // tree
             // 
-            this.buttonIn.Location = new System.Drawing.Point(4, 4);
-            this.buttonIn.Name = "buttonIn";
-            this.buttonIn.Size = new System.Drawing.Size(36, 23);
-            this.buttonIn.TabIndex = 0;
-            this.buttonIn.Text = "In";
-            this.buttonIn.UseVisualStyleBackColor = true;
+            this.tree.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tree.Location = new System.Drawing.Point(0, 0);
+            this.tree.Name = "tree";
+            this.tree.Size = new System.Drawing.Size(161, 426);
+            this.tree.TabIndex = 0;
+            this.tree.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tree_NodeMouseClick);
+            // 
+            // buttonDel
+            // 
+            this.buttonDel.Location = new System.Drawing.Point(121, 4);
+            this.buttonDel.Name = "buttonDel";
+            this.buttonDel.Size = new System.Drawing.Size(36, 23);
+            this.buttonDel.TabIndex = 4;
+            this.buttonDel.Text = "Del";
+            this.buttonDel.UseVisualStyleBackColor = true;
+            this.buttonDel.Click += new System.EventHandler(this.buttonDel_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(82, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(36, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Add";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonRename
             // 
@@ -115,23 +117,24 @@
             this.buttonRename.Text = "Out";
             this.buttonRename.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // buttonIn
             // 
-            this.button1.Location = new System.Drawing.Point(82, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(36, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonIn.Location = new System.Drawing.Point(4, 4);
+            this.buttonIn.Name = "buttonIn";
+            this.buttonIn.Size = new System.Drawing.Size(36, 23);
+            this.buttonIn.TabIndex = 0;
+            this.buttonIn.Text = "In";
+            this.buttonIn.UseVisualStyleBackColor = true;
             // 
-            // buttonDel
+            // data
             // 
-            this.buttonDel.Location = new System.Drawing.Point(121, 4);
-            this.buttonDel.Name = "buttonDel";
-            this.buttonDel.Size = new System.Drawing.Size(36, 23);
-            this.buttonDel.TabIndex = 4;
-            this.buttonDel.Text = "Del";
-            this.buttonDel.UseVisualStyleBackColor = true;
+            this.data.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.data.Location = new System.Drawing.Point(0, 0);
+            this.data.Name = "data";
+            this.data.Size = new System.Drawing.Size(319, 461);
+            this.data.TabIndex = 0;
+            this.data.Text = "";
+            this.data.TextChanged += new System.EventHandler(this.data_TextChanged);
             // 
             // PackageEditor
             // 

@@ -70,11 +70,69 @@ namespace opensc3lib
 				Load (stream);
 			}
 		}
+
+		/// <summary>
+		/// Save the specified stream.
+		/// </summary>
+		/// <param name="stream">Stream.</param>
+		public void Save(Stream stream) {
+			// writer
+			BinaryWriter writer = new BinaryWriter (stream);
+
+			// entries
+			writer.Write (_entries.Count);
+
+			// entries offset locations
+			Dictionary<string, int> offsetLocs = new Dictionary<string, int> ();
+
+			foreach (KeyValuePair<string, PAKEntry> kv in _entries) {
+				// write name
+				writer.WritePakString (kv.Key);
+
+				// store location
+				offsetLocs [kv.Key] = (int)stream.Position;
+
+				// empty offset
+				writer.Write (0);
+			}
+
+			// entries data
+			foreach (KeyValuePair<string, PAKEntry> kv in _entries) {
+				// store old location
+				int dataStart = (int)stream.Position;
+
+				// goto offset location
+				stream.Seek ((int)offsetLocs [kv.Key], SeekOrigin.Begin);
+
+				// write offset
+				writer.Write (dataStart);
+
+				// go back to data
+				stream.Seek (dataStart, SeekOrigin.Begin);
+
+				// write data
+				writer.Write (kv.Value.Values.Count);
+
+				foreach (string str in kv.Value.Values) {
+					writer.WritePakString (str);
+				}
+			}
+		}
+
+		/// <summary>
+		/// Save the specified path.
+		/// </summary>
+		/// <param name="path">Path.</param>
+		public void Save(string path) {
+			using (FileStream stream = new FileStream (path, FileMode.Create)) {
+				Save (stream);
+			}
+		}
 		#endregion
 
 		#region Constructors
 		/// <summary>
-		/// Initializes a new instance of the <see cref="opensc3lib.PAK"/> class.
+		/// Initializes a new instance of the <see cref="opensc3lib.PAK"/> class from the specified path.
 		/// </summary>
 		/// <param name="stream">Stream.</param>
 		public PAK(Stream stream) {
@@ -82,12 +140,18 @@ namespace opensc3lib
 		}
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="opensc3lib.PAK"/> class.
+		/// Initializes a new instance of the <see cref="opensc3lib.PAK"/> class from the specified path.
 		/// </summary>
 		/// <param name="path">Path.</param>
 		public PAK(string path) {
 			Load (path);
 		}
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="opensc3lib.PAK"/> class.
+		/// </summary>
+		public PAK()
+		{ }
 		#endregion
 	}
 
@@ -111,10 +175,10 @@ namespace opensc3lib
 
 		#region Methods
 		/// <summary>
-		/// Save this entry to the specified stream.
+		/// Export this INI entry to the specified stream.
 		/// </summary>
 		/// <param name="stream">Stream.</param>
-		public void Save(Stream stream) {
+		public void Export(Stream stream) {
 			// writer
 			StreamWriter writer = new StreamWriter (stream);
 
@@ -126,13 +190,13 @@ namespace opensc3lib
 		}
 
 		/// <summary>
-		/// Save this entry to the specified path.
+		/// Export this INI entry to the specified path.
 		/// </summary>
 		/// <param name="path">Path.</param>
-		public void Save(string path) {
+		public void Export(string path) {
 			// save to stream
 			using (FileStream stream = new FileStream (path, FileMode.Create)) {
-				Save (stream);
+				Export (stream);
 			}
 		}
 		#endregion

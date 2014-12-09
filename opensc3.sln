@@ -63,7 +63,7 @@ Global
 		{DD3E8AF2-C4B2-4110-AE00-0C0F6F25B468}.Release|x86.Build.0 = Default|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = opensc3-editor\opensc3-editor.csproj
+		StartupItem = opensc3\opensc3.csproj
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

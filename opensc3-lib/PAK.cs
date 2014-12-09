@@ -128,6 +128,65 @@ namespace opensc3lib
 				Save (stream);
 			}
 		}
+
+		/// <summary>
+		/// Add a new entry.
+		/// </summary>
+		/// <param name="entry">Entry.</param>
+		public void Add(string entry) {
+			_entries [entry] = new PAKEntry (new string[]{ });
+		}
+
+		/// <summary>
+		/// Remove the specified entry.
+		/// </summary>
+		/// <param name="entry">Entry.</param>
+		public void Remove(string entry) {
+			_entries.Remove (entry);
+		}
+
+		/// <summary>
+		/// Rename the specified entry to newEntry.
+		/// </summary>
+		/// <param name="entry">Entry.</param>
+		/// <param name="newEntry">New entry.</param>
+		public void Rename(string entry, string newEntry) {
+			PAKEntry oldEntry = _entries [entry];
+			Remove (entry);
+			_entries [newEntry] = oldEntry;
+		}
+
+		/// <summary>
+		/// Import the specified path as an entry.
+		/// </summary>
+		/// <param name="path">Path.</param>
+		public void Import(string path) {
+			// read lines
+			string[] lines = File.ReadAllLines (path);
+
+			// check not empty
+			if (lines.Length == 0)
+				throw new Exception ("The INI file is empty");
+
+			// check SC3 ini
+			if (lines [0].ToLower () != "[admin]")
+				throw new Exception ("Not a valid SC3 ini file");
+
+			// add
+			Add (Path.GetFileName (path));
+
+			// add each line as value
+			_entries [Path.GetFileName (path)].Values = new List<string>(lines);
+		}
+
+		/// <summary>
+		/// Export the specified entry to the specified path.
+		/// </summary>
+		/// <param name="entry">Entry.</param>
+		/// <param name="path">Path.</param>
+		public void Export(string entry, string path) {
+			_entries [entry].Export (path);
+		}
 		#endregion
 
 		#region Constructors
@@ -158,17 +217,19 @@ namespace opensc3lib
 	public class PAKEntry
 	{
 		#region Fields
-		private List<string> _values;
+		private List<string> _values = new List<string>();
 		#endregion
 
 		#region Properties
 		/// <summary>
-		/// Gets the values.
+		/// Gets or sets the values.
 		/// </summary>
 		/// <value>The values.</value>
 		public List<string> Values {
 			get {
 				return _values;
+			} set {
+				_values = new List<string> ();
 			}
 		}
 		#endregion
@@ -209,6 +270,12 @@ namespace opensc3lib
 		public PAKEntry(string[] values) {
 			_values = new List<string> (values);
 		}
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="opensc3lib.PAKEntry"/> class.
+		/// </summary>
+		public PAKEntry()
+		{ }
 		#endregion
 	}
 }

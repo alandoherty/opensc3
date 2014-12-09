@@ -138,6 +138,14 @@ namespace opensc3lib
 		}
 
 		/// <summary>
+		/// Check if a entry exists with the specified name.
+		/// </summary>
+		/// <param name="entry">Entry.</param>
+		public bool Exists(string entry) {
+			return _entries.ContainsKey (entry);
+		}
+
+		/// <summary>
 		/// Remove the specified entry.
 		/// </summary>
 		/// <param name="entry">Entry.</param>

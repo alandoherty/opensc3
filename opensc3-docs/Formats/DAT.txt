@@ -1,0 +1,33 @@
+﻿The DAT file is used for storing the sprites. It has the same header as IXF, but seems to be completely different.
+
+==========
+Header
+==========
+
+The header is simply a 32-bit identifier.
+
+{
+	int32 identity; // always 0xD781C380
+} header;
+
+==========
+Index
+==========
+
+The index is a constant 2337 long list of 20-byte entries. This seems to be an expanded version
+of the IXF files to fit more data.
+
+The boats file is named 15, which equates to 21 in decimal. This is the value of the first int32
+in the index. So I am very sure it is some sort of IXF ID.
+
+The size is always 20.
+
+{
+	int unknown; // no idea, always the same per entry per file (perhaps a directory?)
+	int id; // id, counts sequentially
+	int type; // fairly sure this is the type
+	int offset; // the offset in the file
+	int length; // length
+} entry;
+
+The first offset should always be 20484.

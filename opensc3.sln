@@ -1,0 +1,71 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "opensc3", "opensc3\opensc3.csproj", "{7B61122D-6CF7-4D7D-8801-D733E02A6474}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "opensc3-lib", "opensc3-lib\opensc3-lib.csproj", "{65ECBAF5-0EEE-4E60-A443-0FF7CC3E3C8E}"
+EndProject
+Project("{9344BDBB-3E7F-41FC-A0DD-8665D75EE146}") = "opensc3-docs", "opensc3-docs\opensc3-docs.mdproj", "{DD3E8AF2-C4B2-4110-AE00-0C0F6F25B468}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "opensc3-editor", "opensc3-editor\opensc3-editor.csproj", "{7CFDA70F-44E3-4919-943B-7D98317E2017}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Default|Any CPU = Default|Any CPU
+		Default|x86 = Default|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{65ECBAF5-0EEE-4E60-A443-0FF7CC3E3C8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65ECBAF5-0EEE-4E60-A443-0FF7CC3E3C8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65ECBAF5-0EEE-4E60-A443-0FF7CC3E3C8E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{65ECBAF5-0EEE-4E60-A443-0FF7CC3E3C8E}.Debug|x86.Build.0 = Debug|Any CPU
+		{65ECBAF5-0EEE-4E60-A443-0FF7CC3E3C8E}.Default|Any CPU.ActiveCfg = Debug|Any CPU
+		{65ECBAF5-0EEE-4E60-A443-0FF7CC3E3C8E}.Default|Any CPU.Build.0 = Debug|Any CPU
+		{65ECBAF5-0EEE-4E60-A443-0FF7CC3E3C8E}.Default|x86.ActiveCfg = Debug|Any CPU
+		{65ECBAF5-0EEE-4E60-A443-0FF7CC3E3C8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65ECBAF5-0EEE-4E60-A443-0FF7CC3E3C8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65ECBAF5-0EEE-4E60-A443-0FF7CC3E3C8E}.Release|x86.ActiveCfg = Release|Any CPU
+		{65ECBAF5-0EEE-4E60-A443-0FF7CC3E3C8E}.Release|x86.Build.0 = Release|Any CPU
+		{7B61122D-6CF7-4D7D-8801-D733E02A6474}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{7B61122D-6CF7-4D7D-8801-D733E02A6474}.Debug|x86.ActiveCfg = Debug|x86
+		{7B61122D-6CF7-4D7D-8801-D733E02A6474}.Debug|x86.Build.0 = Debug|x86
+		{7B61122D-6CF7-4D7D-8801-D733E02A6474}.Default|Any CPU.ActiveCfg = Debug|x86
+		{7B61122D-6CF7-4D7D-8801-D733E02A6474}.Default|Any CPU.Build.0 = Debug|x86
+		{7B61122D-6CF7-4D7D-8801-D733E02A6474}.Default|x86.ActiveCfg = Debug|x86
+		{7B61122D-6CF7-4D7D-8801-D733E02A6474}.Default|x86.Build.0 = Debug|x86
+		{7B61122D-6CF7-4D7D-8801-D733E02A6474}.Release|Any CPU.ActiveCfg = Release|x86
+		{7B61122D-6CF7-4D7D-8801-D733E02A6474}.Release|x86.ActiveCfg = Release|x86
+		{7B61122D-6CF7-4D7D-8801-D733E02A6474}.Release|x86.Build.0 = Release|x86
+		{7CFDA70F-44E3-4919-943B-7D98317E2017}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{7CFDA70F-44E3-4919-943B-7D98317E2017}.Debug|x86.ActiveCfg = Debug|x86
+		{7CFDA70F-44E3-4919-943B-7D98317E2017}.Debug|x86.Build.0 = Debug|x86
+		{7CFDA70F-44E3-4919-943B-7D98317E2017}.Default|Any CPU.ActiveCfg = Debug|x86
+		{7CFDA70F-44E3-4919-943B-7D98317E2017}.Default|Any CPU.Build.0 = Debug|x86
+		{7CFDA70F-44E3-4919-943B-7D98317E2017}.Default|x86.ActiveCfg = Debug|x86
+		{7CFDA70F-44E3-4919-943B-7D98317E2017}.Default|x86.Build.0 = Debug|x86
+		{7CFDA70F-44E3-4919-943B-7D98317E2017}.Release|Any CPU.ActiveCfg = Release|x86
+		{7CFDA70F-44E3-4919-943B-7D98317E2017}.Release|x86.ActiveCfg = Release|x86
+		{7CFDA70F-44E3-4919-943B-7D98317E2017}.Release|x86.Build.0 = Release|x86
+		{DD3E8AF2-C4B2-4110-AE00-0C0F6F25B468}.Debug|Any CPU.ActiveCfg = Default|Any CPU
+		{DD3E8AF2-C4B2-4110-AE00-0C0F6F25B468}.Debug|x86.ActiveCfg = Default|Any CPU
+		{DD3E8AF2-C4B2-4110-AE00-0C0F6F25B468}.Debug|x86.Build.0 = Default|Any CPU
+		{DD3E8AF2-C4B2-4110-AE00-0C0F6F25B468}.Default|Any CPU.ActiveCfg = Default|Any CPU
+		{DD3E8AF2-C4B2-4110-AE00-0C0F6F25B468}.Default|Any CPU.Build.0 = Default|Any CPU
+		{DD3E8AF2-C4B2-4110-AE00-0C0F6F25B468}.Default|x86.ActiveCfg = Default|Any CPU
+		{DD3E8AF2-C4B2-4110-AE00-0C0F6F25B468}.Release|Any CPU.ActiveCfg = Default|Any CPU
+		{DD3E8AF2-C4B2-4110-AE00-0C0F6F25B468}.Release|x86.ActiveCfg = Default|Any CPU
+		{DD3E8AF2-C4B2-4110-AE00-0C0F6F25B468}.Release|x86.Build.0 = Default|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = opensc3-editor\opensc3-editor.csproj
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

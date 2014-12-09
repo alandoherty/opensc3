@@ -1,0 +1,50 @@
+﻿The PAK file is used for storing only the game rules as far as I can tell. It has no directories, featuring a single
+index of filenames. The files themselves are series of strings, seperated by new lines.
+
+PAK files only store this special key value data, which is why a length is not required.
+
+A note on strings however. They are prefixed with a 32-bit length indicator, like so:
+
+{
+	int32 length;
+	char chars[length];
+} pak_string;
+
+==========
+Header
+==========
+
+The header contains the number of variable byte file indexes.
+
+{
+	int32 entries; // number of entires
+} header;
+
+
+==========
+Index
+==========
+
+The index is a list of entry structures to the amount specified in the header. Nothing too complicated.
+Since a pak_string is variable, there is no pre-determined size, but they are always at least 8 bytes.
+
+{
+	pak_string name; // name of the file
+	int32 offset; // offset in file
+} entry;
+
+==========
+Entry
+==========
+
+An entry is an array of strings, as far as I know - this is used for the INI files. Each section
+and combined key-value is seperated into a pak_string. For example:
+
+pak_string = "[Admin]"
+pak_string = "Enabled=true; hello"
+
+{
+	int32 values; // number of values
+} entry_header;
+
+From here, it's just an array of pak_string's for the amount of values specified for the entry.

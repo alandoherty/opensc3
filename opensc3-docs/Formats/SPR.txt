@@ -1,0 +1,14 @@
+﻿The sprite files are located in the DAT packages. 
+
+==========
+Header
+==========
+
+The header contains the identity and size data.
+
+{
+	int unknown1; // always 261 (0x05010000)
+	int unknown2; // always 32768 (0x00800000)
+	int width;
+	int height;
+} header;

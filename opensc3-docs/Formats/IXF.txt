@@ -1,0 +1,37 @@
+﻿The IXF file is used for the majority of the data, my guesses show that it's a directory 
+with 32-bit indexes. It's extension is usually IXF.
+
+
+==========
+Header
+==========
+
+The header is simply a 32-bit identifier.
+
+{
+	int32 identity; // always 0xD781C380
+} header;
+
+==========
+Index
+==========
+
+The index is a constant 1024 long list of 20-byte entries. I'm working of the idea that unknown is a "directory"
+and the id is the "file". Perhaps a CRC32 of the name?
+
+{
+	int directory; // think this is the id of the ixf, like a directory name
+	int id; // id, counts sequentially
+	int type; // fairly sure this is the type
+	int offset; // the offset in the file
+	int length; // length
+} entry;
+
+The first offset should always be 20484.
+
+==========
+Data
+==========
+
+The file data is located at each offset provided by the entry, and then the size of the
+length. Not too difficult.

@@ -1,0 +1,28 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="opensc3-editor/PackageEditor.cs">
+    <Files>
+      <File FileName="opensc3/Program.cs" Line="1" Column="1" />
+      <File FileName="opensc3-lib/IXF.cs" Line="1" Column="1" />
+      <File FileName="opensc3-docs/Formats/IXF.txt" Line="1" Column="1" />
+      <File FileName="opensc3-docs/Formats/PAK.txt" Line="1" Column="1" />
+      <File FileName="opensc3-lib/PAK.cs" Line="1" Column="1" />
+      <File FileName="opensc3-lib/Extensions/BinaryReaderEx.cs" Line="1" Column="1" />
+      <File FileName="opensc3-docs/Formats/DAT.txt" Line="1" Column="1" />
+      <File FileName="opensc3-lib/DAT.cs" Line="1" Column="1" />
+      <File FileName="opensc3-docs/Formats/BIN.txt" Line="1" Column="1" />
+      <File FileName="opensc3-docs/Formats/SPR.txt" Line="1" Column="1" />
+      <File FileName="opensc3-editor/Program.cs" Line="16" Column="16" />
+      <File FileName="opensc3-editor/MainWindow.cs" Line="1" Column="1" />
+      <File FileName="opensc3-editor/PackageEditor.cs" Line="13" Column="13" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/alandoherty/Projects/opensc3/opensc3-lib/DAT.cs" line="67" column="1" />
+      <Breakpoint file="/Users/alandoherty/Projects/opensc3/opensc3/Program.cs" line="17" column="1" />
+      <Breakpoint file="/Users/alandoherty/Projects/opensc3/opensc3-lib/DAT.cs" line="69" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

@@ -1,0 +1,16 @@
+﻿The BIN file is an internal format that I've seen only in CSATTRIB.IXF. It might be something to do with
+mapping the sprites.
+
+==========
+Header
+==========
+
+The header is 
+
+{
+	char identity[4]; // always "BIN\r" (0x42494E0D)
+	int unknown1; // no idea
+	int unknown2; // no idea
+	int unknown3; // no idea
+	int unknown4; // no idea
+} header;

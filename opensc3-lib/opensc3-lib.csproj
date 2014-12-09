@@ -36,7 +36,6 @@
     <Compile Include="IXF.cs" />
     <Compile Include="PAK.cs" />
     <Compile Include="Extensions\BinaryReaderEx.cs" />
-    <Compile Include="DAT.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

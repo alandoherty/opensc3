@@ -49,7 +49,7 @@ namespace opensc3lib
 
 
 			// entries
-			for (int i = 0; i < 1024; i++) {
+			while(true) {
 				// read entry
 				_id = reader.ReadInt32 (); // "directory id"
 				int id = reader.ReadInt32 (); // id

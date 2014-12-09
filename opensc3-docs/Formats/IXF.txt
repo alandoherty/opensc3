@@ -16,8 +16,8 @@ The header is simply a 32-bit identifier.
 Index
 ==========
 
-The index is a constant 1024 long list of 20-byte entries. I'm working of the idea that unknown is a "directory"
-and the id is the "file". Perhaps a CRC32 of the name?
+The index is a at a minimum 1024 20-byte entries. If there are less than 1024 actual entries, then the used entries
+are terminated with zeros.
 
 {
 	int directory; // think this is the id of the ixf, like a directory name
@@ -27,7 +27,6 @@ and the id is the "file". Perhaps a CRC32 of the name?
 	int length; // length
 } entry;
 
-The first offset should always be 20484.
 
 ==========
 Data

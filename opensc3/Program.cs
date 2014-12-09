@@ -8,7 +8,7 @@ namespace opensc3
 	{
 		public static void Main (string[] args)
 		{
-			DAT file = new DAT ("Res/Sprites/0000000A_Landmarks.DAT");
+			IXF file = new IXF ("Res/Sprites/0000000A_Landmarks.DAT");
 			//PAK file = new PAK ("Sys/SYS.PAK");
 
 
